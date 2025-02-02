@@ -1,4 +1,4 @@
-export const events = (function () {
+const events = (function () {
     let events = {};
 
     const subscribe = (eventName, fn) => {
@@ -28,6 +28,5 @@ export const events = (function () {
     return { subscribe, unsubscribe, trigger };
 })();
 
-export const hello = () => {
-    console.log("hello world!");
-}
+export { events };
+
