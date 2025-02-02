@@ -1,9 +1,9 @@
 const path = require("path");
-const HtmlWebpackPlugn = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "development",
-    entry: "./src/index.js",
+    entry: "./src/scripts/index.js",
     output: {
         filename: "main.js",
         path: path.resolve(__dirname, "dist"),
@@ -11,7 +11,7 @@ module.exports = {
     },
     devtool: "eval-source-map",
     devServer: {
-        watchFiles: ["./src/template.html],
+        watchFiles: ["./src/template.html"],
 	},
     plugins: [
         new HtmlWebpackPlugin({
@@ -34,15 +34,7 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource',
-            },
-            {
-                test: /\.(csv|tsv)$/i,
-                type: ['csv-loader'],
-            },
-            {
-                test: /\.xml$/i,
-                type: ['xml-loader'],
+                type: "asset/resource",
             },
         ],
     },
