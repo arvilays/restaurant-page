@@ -2,6 +2,7 @@ import "../css/reset.css";
 import "../css/style.css";
 import { events } from "./pubsub.js";
 import { Home } from "./home.js";
+import { Menu } from "./menu.js";
 
 const main = () => {
     const nav = new Navigate;
@@ -9,14 +10,19 @@ const main = () => {
 
 class Navigate {
     constructor () {
+        const home = new Home;
+        const menu = new Menu;
+
         this.content = document.querySelector(".content");
         this.home = document.querySelector("#home-button");
         this.menu = document.querySelector("#menu-button");
         this.contact = document.querySelector("#contact-button");
 
-        this.home.addEventListener("click", () => { this.changeTab(Home.generate()); });
-        this.menu.addEventListener("click", () => { });
+        this.home.addEventListener("click", () => { this.changeTab(home.content); });
+        this.menu.addEventListener("click", () => { this.changeTab(menu.content); });
         this.contact.addEventListener("click", () => { });
+
+        this.changeTab(home.content);
     }
 
     changeTab (container) {

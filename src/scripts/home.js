@@ -2,9 +2,11 @@ import logoImage from "../images/logo-cafe.png";
 import guidanceImage from "../images/img-guidance-cafe.png";
 
 class Home {
-    constructor () {}
+    constructor () {
+        this.content = this.#generate();
+    }
 
-    static generate () {
+    #generate () {
         let homeContainer = document.createElement("div")
         homeContainer.className = "home-container";
 
