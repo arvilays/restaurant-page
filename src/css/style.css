@@ -31,6 +31,10 @@ body {
         height: 100%;
     }
 
+    .logo {
+        width: 300px;
+    }
+
     .logo > a > img {
         height: 75px;
     }
@@ -144,6 +148,40 @@ body {
 /*** CONTACT ***/
 @media only screen and (min-width: 0px) {
     .contact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        max-width: 800px;
+        margin: 50px auto;
+    }
 
+    .contact {
+        background-color: hsl(0, 0%, 100%);
+        font-size: 2em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        padding: 40px;
+        border-radius: 20px;
+    }
+
+    .contact-image {
+        grid-area: 1 / 1 / 4 / 2; 
+    }
+
+    .contact-name {
+        grid-area: 1 / 2 / 2 / 3;
+        font-weight: 600;
+    }
+
+    .contact-role {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .contact-number {
+        grid-area: 3 / 2 / 4 / 3;
+        font-weight: 200;
     }
 }
